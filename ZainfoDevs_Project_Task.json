@@ -1,0 +1,74 @@
+[
+    {
+        "task_id":101,
+        "developer":"Amanda",
+        "project":"Inventory System",
+        "task":"Database Design",
+        "status":"Completed",
+        "hours_logged":12,
+        "priority":"High"
+    },
+    {
+        "task_id":102,
+        "developer":"David",
+        "project":"Inventory System",
+        "task":"API Development",
+        "status":"In Progress",
+        "hours_logged":18,
+        "priority":"High"
+    },
+    {
+        "task_id":103,
+        "developer":"Sarah",
+        "project":"Customer Portal",
+        "task":"UI Mockups",
+        "status":"Completed",
+        "hours_logged":9,
+        "priority":"Medium"
+    },
+    {
+        "task_id":104,
+        "developer":"Michael",
+        "project":"Customer Portal",
+        "task":"Authentication Module",
+        "status":"In Progress",
+        "hours_logged":14,
+        "priority":"High"
+    },
+    {
+        "task_id":105,
+        "developer":"Lisa",
+        "project":"Mobile App",
+        "task":"Bug Fixing",
+        "status":"Completed",
+        "hours_logged":6,
+        "priority":"Low"
+    },
+    {
+        "task_id":106,
+        "developer":"James",
+        "project":"Mobile App",
+        "task":"Push Notifications",
+        "status":"Pending",
+        "hours_logged":0,
+        "priority":"Medium"
+    },
+    {
+        "task_id":107,
+        "developer":"Daniel",
+        "project":"Analytics Dashboard",
+        "task":"Data Visualization",
+        "status":"In Progress",
+        "hours_logged":11,
+        "priority":"High"
+    },
+    {
+        "task_id":108,
+        "developer":"Emily",
+        "project":"Analytics Dashboard",
+        "task":"Testing",
+        "status":"Pending",
+        "hours_logged":0,
+        "priority":"Medium"
+    }
+]
