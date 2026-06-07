@@ -1,0 +1,10 @@
+ZainfoDevs Project Task
+task_id,developer,project,task,status,hours_logged,priority
+101,Amanda,Inventory System,Database Design,Completed,12,High
+102,David,Inventory System,API Development,In Progress,18,High
+103,Sarah,Customer Portal,UI Mockups,Completed,9,Medium
+104,Michael,Customer Portal,Authentication Module,In Progress,14,High
+105,Lisa,Mobile App,Bug Fixing,Completed,6,Low
+106,James,Mobile App,Push Notifications,Pending,0,Medium
+107,Daniel,Analytics Dashboard,Data Visualization,In Progress,11,High
+108,Emily,Analytics Dashboard,Testing,Pending,0,Medium
