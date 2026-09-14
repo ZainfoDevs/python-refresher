@@ -1,0 +1,53 @@
+name: Publish approved Wiki pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "wiki/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish Wiki pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the approved Wiki source
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Clone the published Wiki
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git" published-wiki
+
+      - name: Copy approved pages
+        run: |
+          find wiki -maxdepth 1 -type f -name '*.md' -exec cp '{}' published-wiki/ \;
+
+      - name: Publish changed pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git -C published-wiki config user.name "github-actions[bot]"
+          git -C published-wiki config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C published-wiki add --all
+
+          if git -C published-wiki diff --cached --quiet; then
+            echo "No Wiki changes were detected." >> "${GITHUB_STEP_SUMMARY}"
+            exit 0
+          fi
+
+          git -C published-wiki commit -m "Publish approved Wiki pages"
+          git -C published-wiki push origin HEAD:master
